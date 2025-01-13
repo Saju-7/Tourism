@@ -30,8 +30,9 @@ const handleSubmit = async (e) => {
   }
 
   try {
+    const backendBaseUrl = import.meta.env.VITE_PUBLIC_BASE_URL;
     // Send POST request to backend for registration (no token needed here)
-    const response = await axios.post('http://localhost:8000/api/auth/register', {
+    const response = await axios.post(`${backendBaseUrl}/auth/register`, {
       name,
       email,
       password,

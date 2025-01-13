@@ -45,15 +45,16 @@ const SearchForm = ({ packages, onSelectPackage }) => {
       };
 
       try {
-        const response = await axios.post('http://localhost:8000/api/book', bookingData, {
+        const backendBaseUrl = import.meta.env.VITE_PUBLIC_BASE_URL;
+        const response = await axios.post(`${backendBaseUrl}/book`, bookingData, {
           withCredentials: true,
         });
 
         if (response.status === 201) {
           toast.success('Thank you! Your booking is confirmed.');
 
-          const bookingsResponse = await axios.get(`http://localhost:8000/api/bookings/${response.data.userId}`, {
-            withCredentials: true,
+          const bookingsResponse = await axios.get(`${backendBaseUrl}/bookings/${response.data.userId}`, {
+            withCredentials: true,  // Ensures cookies/session are sent with the request
           });
 
           if (bookingsResponse.data) {

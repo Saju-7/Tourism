@@ -37,9 +37,9 @@ const About = () => {
 
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
   const navigate = useNavigate();
-
+  const backendBaseUrl = import.meta.env.VITE_PUBLIC_BASE_URL;
   useEffect(() => {
-    axios.get('http://localhost:8000/api/reviews', { withCredentials: true })
+    axios.get(`${backendBaseUrl}/reviews`, { withCredentials: true })
       .then(response => {
         setReviews(response.data);
         setLoading(false); // Stop loading once data is fetched
@@ -62,7 +62,7 @@ const About = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:8000/api/reviews', newReview)
+    axios.post(`${backendBaseUrl}/reviews`, newReview)
       .then(response => {
         setReviews((prevReviews) => [...prevReviews, response.data.review]);
         setNewReview({ name: '', image: null, rating: 5 });

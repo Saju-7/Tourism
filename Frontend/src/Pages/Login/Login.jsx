@@ -20,42 +20,47 @@ const Login = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!email || !password) {
       setError('Please fill in both fields');
       return;
     }
-
+  
     setIsLoading(true); // Set loading state to true while fetching data
     try {
       console.log("Sending login request...");
+
+      // Access the backend base URL from frontend .env
+      const backendBaseUrl = import.meta.env.VITE_PUBLIC_BASE_URL;
+      console.log("Backend Base URL:", backendBaseUrl);  // Check if the correct URL is being logged
+
       const response = await axios.post(
-        'http://localhost:8000/api/auth/login',
+        `${backendBaseUrl}/auth/login`,  // Use the backend base URL here
         { email, password },
         { withCredentials: true }
       );
-
+  
       console.log("Login response:", response);
-
+  
       if (response.data.userId) {
         setMessage(response.data.message);
         setError('');
         dispatch(login({ userId: response.data.userId })); // Dispatch userId after login
         console.log("Logged in user ID:", response.data.userId);
-
+  
         // Fetch user bookings after successful login
         const bookingsResponse = await axios.get(
-          `http://localhost:8000/api/bookings/${response.data.userId}`, // Correct URL with template literals
+          `${backendBaseUrl}/bookings/${response.data.userId}`, // Correct URL with environment variable
           { withCredentials: true }
         );
-
+  
         console.log("Bookings response:", bookingsResponse);
-
+  
         if (bookingsResponse.data) {
           dispatch(setUserBookings(bookingsResponse.data)); // Update bookings in Redux state
           console.log("Bookings data:", bookingsResponse.data);
         }
-
+  
         navigate('/'); // Redirect to the home page
       } else {
         setError('No user ID received');
@@ -69,6 +74,7 @@ const Login = () => {
       setIsLoading(false); // Set loading state to false after fetching
     }
   };
+  
 
   return (
     <GlobalContainer>
