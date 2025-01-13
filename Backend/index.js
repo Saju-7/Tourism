@@ -91,7 +91,7 @@ app.use((req, res, next) => {
 // For any other routes, serve the React app's index.html (important for SPA)
 app.get('*', (req, res) => {
   console.log(`Handling request for route: ${req.url}`);
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, './Frontend/build/index.html', 'index.html'));
 });
 
 // Log when server starts listening
