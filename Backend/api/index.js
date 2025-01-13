@@ -3,11 +3,11 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
-import authRoutes from '../routes/authRoutes.js';
-import bookingRoutes from '../routes/bookingRoutes.js';
-import checkRoutes from '../middleware/check-auth.js';
-import authMiddleware from '../middleware/authMiddleware.js';
-import reviewRoutes from '../routes/reviewRoutes.js'; // Import review routes
+import authRoutes from '../api/routes/authRoutes.js';
+import bookingRoutes from '../api/routes/bookingRoutes.js';
+import checkRoutes from '../api/middleware/check-auth.js';
+import authMiddleware from '../api/middleware/authMiddleware.js';
+import reviewRoutes from '../api/routes/reviewRoutes.js'; // Import review routes
 
 dotenv.config();
 
