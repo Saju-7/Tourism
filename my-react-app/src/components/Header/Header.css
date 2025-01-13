@@ -1,0 +1,364 @@
+/* General header styling */
+.header-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px; /* Reduce gap for smaller devices */
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-family: 'Mulish', sans-serif;
+  width: 100%;
+  flex-wrap: wrap; /* Prevent wrapping on large screens */
+}
+
+/* Left side: Logo and Navigation Links */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.header-logo img {
+  height: 60px; /* Adjust the logo size for small devices */
+}
+
+/* Navigation Links */
+.header-nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-nav li {
+  margin-right: 20px;
+}
+
+.header-nav a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Mulish', sans-serif;
+}
+
+/* Sign In Button */
+.header-signin button {
+  padding: 10px 16px;
+  background-color: #304F47;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Mulish', sans-serif;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease; /* Smooth transition for clicking effect */
+}
+
+.hamburger div {
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open div:nth-child(1) {
+  transform: rotate(45deg);
+  position: relative;
+  top: 8px;
+}
+
+.hamburger.open div:nth-child(2) {
+  opacity: 0; /* Hide the middle line */
+}
+
+.hamburger.open div:nth-child(3) {
+  transform: rotate(-45deg);
+  position: relative;
+  bottom: 8px;
+}
+
+/* Mobile Navigation Styles */
+.mobile-nav {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 65px;
+  right: 0;
+  background-color: hsl(165, 24%, 25%); /* Dark background color */
+  width: 250px;
+  height: 50vh; /* Full-height mobile navigation */
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.3); /* Add some shadow for depth */
+  transition: 2s; /* Smooth transition for sliding in */
+  z-index: 5;
+}
+
+.mobile-nav.active {
+  transform: translateX(0); /* Slide into view */
+  display: flex; /* Ensure it's visible when active */
+}
+
+/* Mobile Navigation List */
+.mobile-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Transition properties for each list item */
+.mobile-nav li {
+  margin: 20px 0;
+  opacity: 0; /* Start with opacity 0 */
+  transform: translateX(100%); /* Start off-screen to the right */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition for both opacity and position */
+}
+
+.mobile-nav.active li {
+  opacity: 1; /* Fade in */
+  transform: translateX(0); /* Move into view from the right */
+  transition-delay: 0s; /* Remove delay once the menu is active */
+}
+
+/* Staggering Effect for each list item */
+.mobile-nav li:nth-child(1) {
+  transition-delay: 0.2s; /* Delay the first item by 0.2 seconds */
+}
+
+.mobile-nav li:nth-child(2) {
+  transition-delay: 0.3s; /* Delay the second item by 0.3 seconds */
+}
+
+.mobile-nav li:nth-child(3) {
+  transition-delay: 0.4s; /* Delay the third item by 0.4 seconds */
+}
+
+.mobile-nav li:nth-child(4) {
+  transition-delay: 0.5s; /* Delay the fourth item by 0.5 seconds */
+}
+
+.mobile-nav li:nth-child(5) {
+  transition-delay: 0.6s; /* Delay the fifth item by 0.6 seconds */
+}
+
+.mobile-nav a {
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+/* TopHeader Styles */
+.top-header-container {
+  background-color: #304F47;
+  color: white;
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Left side: Contact and Message */
+.top-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.top-header-left div {
+  margin-right: 20px;
+}
+
+.top-header-left span {
+  margin-left: 5px;
+}
+
+/* Right side: Social Icons */
+.top-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.top-header-right a {
+  color: white;
+  margin: 0 10px;
+}
+
+.header-signin {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-signin .btn2 {
+  font-size: 24px; /* Increase the font size of the icon */
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #e9eeed;
+  color: black;
+}
+
+.header-signin button svg {
+  width: 24px; /* Ensure the icon size fits within the button */
+  height: 24px;
+  margin-right: 8px; /* Space between the icon and text */
+}
+
+.header-signin button {
+  padding: 10px 16px;
+  background-color: #304F47;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Mulish', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.header-signin button svg {
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .header-signin {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .header-signin button {
+    width: 48%;  /* Ensure both buttons take nearly the full width */
+    padding: 12px 16px;
+  }
+
+  .modern-cart-btn {
+    margin-left: 0;
+    margin-top: 15px;  /* Add spacing between the cart button and others */
+  }
+
+  .header-logo img {
+    height: 60px;
+  }
+
+  .mobile-nav {
+    width: 100%;  /* Full width for the mobile navigation */
+    height: auto;  /* Adjust height based on content */
+    box-shadow: none;  /* Remove box-shadow on mobile */
+    position: relative; /* Position it relative to avoid overlap */
+    top: auto;
+  }
+
+  .mobile-nav li {
+    padding: 15px;
+    font-size: 18px;  /* Increase font size for easier reading */
+    text-align: center;
+  }
+
+  .mobile-nav a {
+    color: white;
+    font-size: 18px;  /* Increase font size for better readability */
+  }
+
+  .cart-count {
+    font-size: 12px;  /* Adjust the size of the cart count bubble */
+  }
+}
+
+/* For small devices (up to 480px) */
+@media (max-width: 480px) {
+  .top-header-left span,
+  .top-header-right a {
+    font-size: 14px;
+  }
+  .reg{
+    margin-left: 181px !important;
+  }
+
+  .header-logo img {
+    height: 50px;
+  }
+
+  .header-nav a {
+    font-size: 16px;
+  }
+
+  .header-signin {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 0px 10px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Apply the same width to both buttons */
+  .header-signin button {
+    font-size: 14px;
+    width: 100%;  /* Ensure both buttons take nearly the full width */
+    margin-left: 0 !important;
+    padding: 12px 16px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .modern-cart-btn {
+    margin-left: 0;
+    margin-top: 10px; /* Keep space between buttons */
+  }
+
+  .cart-count {
+    font-size: 10px;
+    padding: 0.3rem;  /* Reduce size for better fitting */
+  }
+}
+
+.modern-cart-btn {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 14px;
+  font-weight: bold;
+}

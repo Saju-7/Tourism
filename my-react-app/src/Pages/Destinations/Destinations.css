@@ -1,0 +1,136 @@
+/* General container styles */
+.destinations-container {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    height: 820px;
+
+    font-family: 'Lora', serif;
+  }
+  
+  /* Heading styles */
+  .destinations-heading {
+    color: #C7923E;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  /* Description styles */
+  .destinations-description {
+    color: black;
+    font-family: 'Lora', serif;
+    font-size: 50px;
+    width: 30%;
+    margin: auto;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 30px;
+  }
+ 
+  
+  /* Card styling */
+  .destinations-container .card {
+    text-align: start;
+    padding: 0px 5px;
+    width: 10%;
+    border: none !important;
+  }
+  .destinations-container .slick-slide{
+    width: 3% !important;
+     margin-left: 110px !important;
+    border: none !important;
+  }
+  
+  .destinations-container .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50px;
+  }
+  
+  /* Optional: Hover effect for cards */
+  .destinations-container .card:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+  }
+  .destinations-container .btn-container{
+    padding: 10px;
+    text-align: right;
+  }
+  .destinations-container .btn-container .handleleft{
+    background-color: green;
+    padding: 7px 12px;
+    margin: 10px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+  }
+  .destinations-container .btn-container .handleright{
+    background-color: #C7923E;
+    padding: 7px 12px;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  .destinations-container  .card p {
+    color: #9A9AB0;
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    padding: 0px !important;
+    line-height: 1.5;
+}
+.destinations-container .slider{
+  width: 100%;
+  margin-left: auto;
+}
+@media (max-width: 768px) {
+  .destinations-description {
+    font-size: 1rem;
+    width: 90%;
+  }
+
+  .destinations-container .card {
+    width: 100%; /* Cards take full width on smaller screens */
+  }
+
+  .destinations-container .btn-container {
+    justify-content: space-between;
+  }
+
+  .destinations-heading {
+    font-size: 24px;
+  }
+
+  .destinations-container .btn-container .handleleft,
+  .destinations-container .btn-container .handleright {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .destinations-description {
+    font-size: 0.9rem;
+    width: 100%; /* Allow description to take full width */
+  }
+  .destinations-container{
+    height: 520px;
+  }
+
+  .destinations-heading {
+    font-size: 22px;
+  }
+
+  .destinations-container .btn-container {
+    flex-direction: column;
+  }
+
+  .destinations-container .btn-container .handleleft,
+  .destinations-container .btn-container .handleright {
+    padding: 10px 12px;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+}

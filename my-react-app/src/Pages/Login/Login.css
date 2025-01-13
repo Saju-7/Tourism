@@ -1,0 +1,168 @@
+/* Basic styling for the login form */
+.login-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80vh; /* Full viewport height */
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-box {
+  background-color: rgba(48, 79, 71, 0.8); /* Slight transparency for better text visibility */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(186, 180, 180, 0.1);
+  width: 500px;
+
+  text-align: center;
+  color: white;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: white;
+}
+
+.form-field {
+  margin-bottom: 15px;
+  text-align: left;
+  width: 89.5%;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: white;
+}
+
+/* Style for input fields with icons */
+.input-with-icon {
+  position: relative;
+  color: black !important;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding: 10px 15px;
+  padding-left: 35px; /* Adjust space for the icon */
+  margin: 5px 0;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.input-with-icon i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+/* Input focus styles */
+.input-with-icon input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Error message */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Submit button */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #C7923E;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styles (for small devices) */
+@media (max-width: 768px) {
+  /* Mobile Devices */
+  .login-container {
+    padding: 0;
+    height: 100vh; /* Full height for mobile devices */
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    position: relative;
+  }
+  .modern-cart-btn{
+    height: 40px !important;
+    padding: 0px !important;
+    margin:  0px !important;
+  }
+
+  .login-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../images/registericon.svg'); /* Background image */
+    background-size: cover; /* Make sure the image covers the container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat;
+    z-index: -1; /* Ensure form stays above the image */
+  }
+
+  .login-box {
+    background-color: rgba(48, 79, 71, 0.8); /* Slight transparency */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(186, 180, 180, 0.1);
+    width: 80%; /* Reduce width on small screens */
+    max-width: 400px; /* Limit max-width */
+    text-align: center;
+    margin-top: -140px;
+    color: white;
+    position: relative; /* Ensure it stays on top of the background */
+  }
+
+  h2 {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+
+  .form-field {
+    margin-bottom: 10px; /* Reduce space between fields */
+  }
+
+  .form-field label {
+    font-size: 14px; /* Adjust label font size */
+  }
+
+  .input-with-icon input {
+    font-size: 16px; /* Adjust input font size */
+    width: 89% !important;
+    padding: 12px 32px !important; /* Increase padding */
+  }
+
+  .login-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .header-signin button {
+    width: 19%;
+  }
+  
+
+  .error-message, .success-message {
+    font-size: 12px;
+  }
+}

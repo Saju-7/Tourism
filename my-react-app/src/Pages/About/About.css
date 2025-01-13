@@ -1,0 +1,402 @@
+/* General container styles */
+.about-container {
+  text-align: center;
+  font-family: 'Lora', serif;
+  padding: 40px 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Heading styles */
+.about-heading {
+  color: #C7923E;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about-description {
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* Add Review Button */
+.add-review-button {
+  background-color: #C7923E;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.add-review-button:hover {
+  background-color: #2A3C34;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+/* Slider Styling */
+.testimonial-slider {
+  margin: 40px 0px !important;
+}
+
+.slider-item {
+  text-align: center;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.slider-item h2 {
+  color: black;
+}
+
+.slick-slide img {
+  display: inline !important;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.rating span {
+  font-size: 25px;
+  color: black; /* Default color black */
+}
+
+.rating .filled {
+  color: #C7923E; /* Yellow when selected */
+}
+
+/* Custom Arrows Styling */
+.btn-container {
+  text-align: end;
+  margin-top: 30px;
+}
+
+.handleleft,
+.handleright {
+  background-color: #C7923E;
+  padding: 7px 12px;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.handleleft:hover, .handleright:hover {
+  background-color: #2A3C34;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  width: 450px;
+  text-align: start;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-20px);
+  animation: modalIn 0.3s forwards;
+}
+
+.modal-content h2 {
+  color: #C7923E;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Modal animation */
+@keyframes modalIn {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Star Rating */
+.star-rating {
+  margin-top: 20px;
+  font-size: 30px;
+  color: #000000;
+}
+
+.star-rating span {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.star-rating span.filled {
+  color: #C7923E; /* Yellow for filled star */
+}
+
+.star-rating span:hover {
+  transform: scale(1.2);
+}
+
+/* Image preview */
+.image-preview {
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+.preview-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Input styles for the modal */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="file"] {
+  margin-top: 10px;
+}
+
+/* Button Styling in Modal */
+button[type="submit"],
+button.close-btn {
+  background-color: #C7923E;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover,
+button.close-btn:hover {
+  background-color: #2A3C34;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  color: white;
+}
+
+button.close-btn {
+  background-color: transparent;
+  color: #333;
+  border: 2px solid #C7923E;
+}
+
+/* Custom Dropzone Styling */
+.dropzone {
+  border: 2px dashed #C7923E; /* Dashed border with the same accent color */
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  background-color: #f9f9f9;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border 0.3s ease;
+  margin-top: 20px;
+}
+
+.dropzone p {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.dropzone:hover {
+  background-color: #C7923E; /* Background color on hover */
+  color: white; /* Text color change on hover */
+  border: 2px dashed white; /* Border turns white on hover */
+}
+
+/* Image preview styling */
+.image-preview {
+  margin-top: 20px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.preview-img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+/* Style for the file input field (for fallback if dropzone doesn't work) */
+input[type="file"] {
+  display: none;
+}
+
+/* Media Queries for responsiveness */
+
+/* Tablet-sized devices */
+@media (max-width: 768px) {
+  .about-heading {
+    font-size: 28px;
+  }
+
+  .about-description {
+    font-size: 24px;
+    width: 70%;
+  }
+
+  .testimonial-slider {
+    margin: 20px 0;
+  }
+
+  .slider-item {
+    padding: 20px;
+  }
+
+  .handleleft,
+  .handleright {
+    font-size: 18px;
+    padding: 6px 10px;
+  }
+
+  .add-review-button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: 24px;
+  }
+
+  .star-rating {
+    font-size: 24px;
+  }
+
+  .image-preview {
+    max-width: 100%;
+  }
+
+  .preview-img {
+    max-width: 120px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .about-container {
+    padding: 20px;
+  }
+
+  .about-heading {
+    font-size: 24px;
+  }
+
+  .about-description {
+    font-size: 20px;
+    width: 90%;
+  }
+  .btn-container{
+    padding-right: 20px;
+  }
+
+  .testimonial-slider {
+    margin: 20px 0;
+  }
+
+  .slider-item {
+    margin: auto;
+    padding: 0px 20px;
+     width: 75% !important;
+   
+  }
+  .slick-slide{
+    width: 300px !important;
+  }
+
+  .handleleft,
+  .handleright {
+    font-size: 16px;
+    padding: 5px 8px;
+  }
+
+  .add-review-button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .modal-content {
+    width: 70%;
+    padding: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: 22px;
+  }
+
+  .star-rating {
+    font-size: 22px;
+  }
+
+  .image-preview {
+    max-width: 100%;
+  }
+
+  .preview-img {
+    max-width: 100px;
+  }
+}

@@ -1,0 +1,202 @@
+/* General container styles */
+.tour-container {
+  text-align: center;
+}
+
+/* Heading styles */
+.tour-heading {
+  color: #C7923E;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Description styles */
+.tour-description {
+  color: black;
+  font-family: 'Lora', serif;
+  font-size: 50px;
+  width: 30%;
+  margin: auto;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Card container styles */
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  margin-top: 40px;
+  padding: 0 10px; /* Add padding to prevent content from touching edges */
+}
+
+/* Individual card styles */
+.tour-container .card {
+  width: 100%;
+  max-width: 23%;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 30px;
+  text-align: start;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h1 {
+  font-size: 24px;
+  color: #333;
+  padding: 10px 10px;
+}
+
+.card p {
+  color: black;
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  padding: 10px 10px;
+  line-height: 1.5;
+}
+
+.card button {
+  background-color: #C7923E;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 10px;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #A57A2E;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets (up to 1024px) */
+@media (max-width: 1024px) {
+  .tour-heading {
+      font-size: 32px;
+  }
+
+  .tour-description {
+      font-size: 20px;
+      width: 80%;
+  }
+
+  /* Card container changes */
+  .card-container {
+      justify-content: space-evenly;
+  }
+
+  /* Cards adjustments */
+  .card {
+      width: 45%; /* Cards will take up 45% of the width on tablet-sized screens */
+  }
+
+  .card h1 {
+      font-size: 22px;
+  }
+
+  .card p {
+      font-size: 14px;
+  }
+
+  .card button {
+      padding: 10px 18px;
+      font-size: 14px;
+  }
+}
+
+/* For mobile devices (up to 768px) */
+@media (max-width: 768px) {
+  .tour-heading {
+      font-size: 28px;
+  }
+
+  .tour-description {
+      font-size: 18px;
+      width: 90%;
+  }
+
+  /* Card container changes */
+  .card-container {
+      flex-direction: column; /* Stack cards vertically */
+      align-items: center;
+      gap: 20px; /* Space between stacked cards */
+  }
+
+  .card {
+      width: 90%; /* Cards will take up 90% of the width on mobile-sized screens */
+  }
+
+  .card h1 {
+      font-size: 20px;
+  }
+
+  .card p {
+      font-size: 14px;
+  }
+
+  .card button {
+      padding: 8px 15px;
+      font-size: 12px;
+  }
+}
+
+/* For very small devices (up to 480px) */
+@media (max-width: 480px) {
+  .tour-heading {
+      font-size: 24px;
+  }
+
+  .tour-container {
+      margin-top: 0px;
+  }
+  .book-now-button{
+    width: 50% !important;
+  }
+  .tour-description {
+      font-size: 16px;
+      width: 90%;
+  }
+
+  /* Ensure card containers are fully responsive on very small screens */
+  .card-container {
+     margin: auto;
+      width: 95%;
+  }
+  .tour-container .card{
+    width: 100%;
+    margin-top: 0px;
+    max-width: 100%
+  }
+
+  .card {
+      width: 100%; 
+      margin-bottom: 10px;
+  }
+
+  .card h1 {
+      font-size: 18px;
+  }
+
+  .card p {
+      font-size: 12px;
+  }
+
+  .card button {
+      padding: 8px 12px;
+      font-size: 12px;
+  }
+}

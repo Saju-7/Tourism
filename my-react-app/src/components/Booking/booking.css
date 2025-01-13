@@ -1,0 +1,209 @@
+/* Booking Component Styling */
+.user-bookings {
+  font-family: 'Arial', sans-serif;
+  color: #304F47; /* Dark greenish color */
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff; /* White background */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adds spacing between booking items */
+  justify-content: center;
+}
+
+.user-bookings h1 {
+  font-size: 2.2rem;
+  color: #304F47;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: bold;
+  width: 100%;
+}
+
+.user-bookings h2 {
+  font-size: 1.6rem;
+  color: #304F47;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.user-bookings .edit-booking-form {
+  background-color: #f4f4f4;
+  padding: 25px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-bookings label {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.user-bookings input[type='text'],
+.user-bookings input[type='number'],
+.user-bookings input[type='date'] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #304F47;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 1.1rem;
+  transition: border-color 0.3s ease;
+}
+
+.user-bookings input[type='text']:focus,
+.user-bookings input[type='number']:focus,
+.user-bookings input[type='date']:focus {
+  outline: none;
+  border-color: #C7923E; /* Highlight with this color */
+}
+
+.user-bookings button {
+  background-color: #C7923E; /* Gold color */
+  color: white;
+  padding: 8px 16px; /* Smaller button padding */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem; /* Smaller font */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+}
+
+.user-bookings button:hover {
+  background-color: #b0782e; /* Slightly darker shade for hover effect */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.user-bookings button:focus {
+  outline: none;
+}
+
+.user-bookings button.cancel-btn {
+  background-color: #304F47;
+  margin-left: 15px;
+}
+
+.user-bookings button.cancel-btn:hover {
+  background-color: #253b32;
+}
+
+.user-bookings ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 10px; /* Adds spacing between list items */
+}
+
+.user-bookings li {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+  width: calc(23.33% - 20px); /* Each booking takes up 1/3 of the container width */
+  display: flex;
+  flex-direction: column;
+}
+
+.user-bookings li:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Hover effect for list items */
+}
+
+.user-bookings li .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.user-bookings li .buttons button {
+  width: 48%;
+  padding: 8px 16px;
+  font-size: 0.9rem; /* Smaller font for buttons */
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.user-bookings li .buttons .edit-btn {
+  background-color: #C7923E;
+}
+
+.user-bookings li .buttons .delete-btn {
+  background-color: #FF4E4E; /* Red for delete */
+}
+
+.user-bookings li .buttons .edit-btn:hover {
+  background-color: #b0782e;
+  transform: translateY(-1px);
+}
+
+.user-bookings li .buttons .delete-btn:hover {
+  background-color: #e03d3d;
+  transform: translateY(-1px);
+}
+
+.user-bookings li div {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.user-bookings li div strong {
+  font-weight: 600;
+}
+
+.user-bookings .loading,
+.user-bookings .empty-cart {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #304F47;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .user-bookings {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  input[type='text'],
+  input[type='number'],
+  input[type='date'] {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+
+  .user-bookings .edit-booking-form {
+    padding: 20px;
+  }
+
+  .user-bookings li {
+    padding: 15px;
+    width: 100%; /* Stacks the items vertically on small screens */
+  }
+
+  .user-bookings li .buttons button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
