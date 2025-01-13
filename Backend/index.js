@@ -58,7 +58,7 @@ import { fileURLToPath } from 'url';
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 8000;
+const port = 8000;
 
 // Get the current directory in ES module
 const __filename = fileURLToPath(import.meta.url);
