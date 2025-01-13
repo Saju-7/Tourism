@@ -64,24 +64,40 @@ const port = 8000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Log server start
+console.log(`Server is starting...`);
+
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-  .then(() => console.log('MongoDB connected'))
-  .catch((err) => console.log('MongoDB connection error:', err));
+  .then(() => {
+    console.log('MongoDB connected successfully');
+  })
+  .catch((err) => {
+    console.log('MongoDB connection error:', err);
+  });
 
 // Serve static files from the React app's build directory
 app.use(express.static(path.join(__dirname, 'build')));
 
+// Log static file serving
+app.use((req, res, next) => {
+  console.log(`Request for static files: ${req.url}`);
+  next();
+});
+
 // For any other routes, serve the React app's index.html (important for SPA)
 app.get('*', (req, res) => {
+  console.log(`Handling request for route: ${req.url}`);
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
+// Log when server starts listening
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
 
 
