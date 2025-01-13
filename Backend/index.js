@@ -80,7 +80,7 @@ mongoose.connect(process.env.MONGODB_URI, {
   });
 
 // Serve static files from the React app's build directory
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, './Frontend/build')));
 
 // Log static file serving
 app.use((req, res, next) => {
