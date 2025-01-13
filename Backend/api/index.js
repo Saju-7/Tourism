@@ -1,20 +1,17 @@
-// app.js
-
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
-import authRoutes from './routes/authRoutes.js';
-import bookingRoutes from './routes/bookingRoutes.js';
-import checkRoutes from './middleware/check-auth.js';
-import authMiddleware from './middleware/authMiddleware.js';
-import reviewRoutes from './routes/reviewRoutes.js'; // Import review routes
+import authRoutes from '../routes/authRoutes.js';
+import bookingRoutes from '../routes/bookingRoutes.js';
+import checkRoutes from '../middleware/check-auth.js';
+import authMiddleware from '../middleware/authMiddleware.js';
+import reviewRoutes from '../routes/reviewRoutes.js'; // Import review routes
 
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 8000;
 
 // CORS configuration to allow cookies and your frontend URL
 const corsOptions = {
@@ -22,7 +19,6 @@ const corsOptions = {
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,  // This allows cookies to be sent in cross-origin requests
 };
-
 
 app.use(cors(corsOptions));
 app.use(express.json());
@@ -42,7 +38,5 @@ app.use('/api/', bookingRoutes);
 app.use('/api/', checkRoutes);
 app.use('/api/auth', authRoutes);
 
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+// Vercel serverless function export
+export default app;
