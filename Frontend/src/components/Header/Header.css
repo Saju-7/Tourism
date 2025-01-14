@@ -304,7 +304,7 @@
   .header-container {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 3rem;  /* Adjusted gap for better spacing */
+    gap: 2rem !important;  /* Adjusted gap for better spacing */
   }
 
   .header-nav {
