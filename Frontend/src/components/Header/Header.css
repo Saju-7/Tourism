@@ -65,7 +65,6 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 30px;
   height: 30px;
   background: transparent;
   border: none;
@@ -171,17 +170,25 @@
 .top-header-container {
   background-color: #304F47;
   color: white;
-  padding: 15px 0;
+  padding: 20px 20px; /* Adjusted padding for a cleaner look */
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; /* Space between left and right sections */
   align-items: center;
   flex-wrap: wrap;
+  box-sizing: border-box; /* Ensures padding is included in the total width/height */
+  width: 100%;
+ 
+}
+
+.top-header-left,
+.top-header-right {
+  display: flex;
+  align-items: center;
 }
 
 /* Left side: Contact and Message */
 .top-header-left {
-  display: flex;
-  align-items: center;
+  flex: 1; /* Makes the left section take up available space */
 }
 
 .top-header-left div {
@@ -196,12 +203,59 @@
 .top-header-right {
   display: flex;
   align-items: center;
+  gap: 15px; /* Adds space between social icons */
 }
 
 .top-header-right a {
   color: white;
-  margin: 0 10px;
+  font-size: 18px; /* Standardized size for social icons */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
+
+.top-header-right a:hover {
+  color: #FFD700; /* Gold color on hover for better interaction feedback */
+}
+
+/* Ensuring responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .top-header-container {
+    padding: 10px 15px; /* Reduced padding for smaller screens */
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .top-header-left {
+    margin-bottom: 10px; /* Adds spacing between the left and right sections */
+  }
+
+  .top-header-right {
+    margin-top: 10px; /* Adds space between the left and right sections */
+    gap: 10px; /* Reduced gap for smaller screens */
+  }
+
+  .top-header-left div {
+    font-size: 14px; /* Slightly smaller text for smaller screens */
+  }
+
+  .top-header-right a {
+    font-size: 16px; /* Reduced icon size for better fit */
+  }
+}
+
+@media (max-width: 480px) {
+  .top-header-container {
+    padding: 8px 10px; /* Reduced padding for even smaller screens */
+  }
+
+  .top-header-left div {
+    font-size: 12px; /* Further reduced font size for compactness */
+  }
+
+  .top-header-right a {
+    font-size: 14px; /* Reduced icon size for better fit on small screens */
+  }
+}
+
 
 .header-signin {
   display: flex;
@@ -238,114 +292,191 @@
 .header-signin button svg {
   margin-right: 5px;
 }
+.header-logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 290px;
+}
 
+/* For small devices (up to 768px) */
+/* Mobile and small screen adjustments */
 @media (max-width: 768px) {
   .header-container {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 3rem;  /* Adjusted gap for better spacing */
   }
 
   .header-nav {
-    display: none;
+    display: none;  /* Hide regular navigation links on smaller screens */
   }
 
   .hamburger {
-    display: flex;
+    display: flex;  /* Show hamburger menu */
+    flex-direction: column;
+    justify-content: space-between;
+    height: 22px;  /* Adjusted height */
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 3px;  /* Hamburger lines slightly thinner */
+    background-color: #333;  /* More visible color */
   }
 
   .header-signin {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1rem;  /* Adjusted gap between buttons */
     align-items: center;
+    padding: 0.8rem;
   }
 
   .header-signin button {
-    width: 48%;  /* Ensure both buttons take nearly the full width */
-    padding: 12px 16px;
+    width: 100%;
+    padding: 0.7rem 0.6rem;
+    font-size: 1rem;  /* Slightly larger font size */
+    border-radius: 0.3rem;
+    transition: all 0.3s ease;  /* Smooth button transition */
   }
 
   .modern-cart-btn {
-    margin-left: 0;
-    margin-top: 15px;  /* Add spacing between the cart button and others */
+    margin-top: 1.2rem; /* Adjusted spacing */
   }
 
   .header-logo img {
-    height: 60px;
+    height: 50px;  /* Adjust logo size on smaller screens */
+    transition: all 0.3s ease;  /* Smooth scaling */
   }
 
   .mobile-nav {
-    width: 100%;  /* Full width for the mobile navigation */
-    height: auto;  /* Adjust height based on content */
-    box-shadow: none;  /* Remove box-shadow on mobile */
-    position: relative; /* Position it relative to avoid overlap */
-    top: auto;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #304F47;  /* Dark background */
+    display: none;  /* Hidden by default */
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Added box-shadow for better visibility */
+    animation: slideIn 0.3s ease-out;
+  }
+
+  .mobile-nav.active {
+    display: flex;  /* Show mobile nav when active */
+  }
+
+  .mobile-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
   }
 
   .mobile-nav li {
-    padding: 15px;
-    font-size: 18px;  /* Increase font size for easier reading */
+    padding: 1rem;
+    font-size: 1rem;  /* Adjusted font size for readability */
     text-align: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   .mobile-nav a {
     color: white;
-    font-size: 18px;  /* Increase font size for better readability */
+    font-size: 1.1rem;  /* Larger font size */
+    text-decoration: none;
   }
 
   .cart-count {
-    font-size: 12px;  /* Adjust the size of the cart count bubble */
+    font-size: 0.9rem;  /* Adjusted cart count size */
   }
 }
 
-/* For small devices (up to 480px) */
+/* For very small screens (up to 480px) */
 @media (max-width: 480px) {
+  .reg {
+    margin-left: 1px !important;
+  }
+
+  .top-header-container {
+    padding: 0.5rem 1rem;  /* Reduced padding */
+  }
+
   .top-header-left span,
   .top-header-right a {
-    font-size: 14px;
-  }
-  .reg{
-    margin-left: 181px !important;
+    font-size: 0.9rem;  /* Smaller font for tighter spaces */
   }
 
   .header-logo img {
-    height: 50px;
+    height: 45px;  /* Smaller logo */
   }
 
   .header-nav a {
-    font-size: 16px;
+    font-size: 0.9rem;  /* Reduce nav font size */
+  }
+
+  .header-signin button {
+    width: 100%;
+    font-size: 0.9rem;  /* Smaller text */
+    padding: 0.6rem 1.2rem;
   }
 
   .header-signin {
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    padding: 0px 10px;
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  /* Apply the same width to both buttons */
-  .header-signin button {
-    font-size: 14px;
-    width: 100%;  /* Ensure both buttons take nearly the full width */
-    margin-left: 0 !important;
-    padding: 12px 16px;
-    border-radius: 5px;
-    text-align: center;
+    gap: 0.5rem;  /* Reduced gap between buttons */
+    align-items: center;
+    padding: 0.5rem;
   }
 
   .modern-cart-btn {
-    margin-left: 0;
-    margin-top: 10px; /* Keep space between buttons */
+    margin-top: 1rem;
   }
 
   .cart-count {
-    font-size: 10px;
-    padding: 0.3rem;  /* Reduce size for better fitting */
+    font-size: 0.8rem;  /* Smaller cart count */
+    padding: 0.2rem;
+  }
+
+  .hamburger {
+    height: 20px;  /* Smaller hamburger button */
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 2px;  /* Thinner hamburger lines */
+  }
+
+  .mobile-nav li {
+    font-size: 0.9rem;  /* Smaller text */
+  }
+
+  .header-logo {
+    margin-right: 0;
+    font-size: 1rem;  /* Adjust logo text size */
+  }
+
+  .header-signin .btn2 {
+    font-size: 1rem;  /* Adjust icon size */
+    padding: 0.8rem;
+    border-radius: 50%;
+    background-color: #e9eeed;
+    color: #333;
   }
 }
+
+
+/* Slide-in effect for mobile nav */
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);  /* Start off-screen */
+  }
+  100% {
+    transform: translateX(0);  /* End at the screen position */
+  }
+}
+
 
 .modern-cart-btn {
   position: relative;

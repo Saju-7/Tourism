@@ -116,6 +116,10 @@
 
 /* For small devices (up to 480px) */
 @media (max-width: 480px) {
+  .slider-container{
+    height: 50vh;
+    margin: 0px;
+  }
   .slider-heading {
     font-size: 6vw; /* Smaller font size for small devices */
     top: 35%;

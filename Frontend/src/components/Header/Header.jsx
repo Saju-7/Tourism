@@ -9,7 +9,6 @@ import HeaderLogo from '../../images/HeaderLogo.png';
 import { FaShoppingCart } from 'react-icons/fa'; // Cart icon
 import { setUserBookings } from '../../features/bookingSlice/bookingSlice.js';  // Ensure this is imported
 
-
 const Header = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);  // Getting authentication state from Redux
@@ -23,6 +22,11 @@ const Header = () => {
   // Toggle mobile navigation menu
   const toggleMobileNav = () => {
     setMobileNavOpen(!isMobileNavOpen);
+  };
+
+  // Close the mobile navigation when any link is clicked
+  const closeMobileNav = () => {
+    setMobileNavOpen(false);
   };
 
   // Redirect to login page
@@ -69,7 +73,10 @@ const Header = () => {
               <ul>
                 {links.map((link, index) => (
                   <li key={index}>
-                    <Link to={link.path}>{link.name}</Link>
+                    {/* Add the closeMobileNav function to close the menu when a link is clicked */}
+                    <Link to={link.path} onClick={closeMobileNav}>
+                      {link.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -78,11 +85,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Hamburger Icon */}
-        <div className={`hamburger ${isMobileNavOpen ? 'open' : ''}`} onClick={toggleMobileNav}>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+       
 
         {/* Right side: Conditional Rendering for Sign In or Logout */}
         <div className="header-signin">
@@ -107,6 +110,11 @@ const Header = () => {
             </>
           )}
         </div>
+        <div className={`hamburger ${isMobileNavOpen ? 'open' : ''}`} onClick={toggleMobileNav}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
@@ -114,7 +122,10 @@ const Header = () => {
         <ul>
           {links.map((link, index) => (
             <li key={index}>
-              <Link to={link.path}>{link.name}</Link>
+              {/* Add the closeMobileNav function here as well */}
+              <Link to={link.path} onClick={closeMobileNav}>
+                {link.name}
+              </Link>
             </li>
           ))}
         </ul>
