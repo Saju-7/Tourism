@@ -35,7 +35,7 @@ const Login = () => {
       console.log("Backend Base URL:", backendBaseUrl);  // Check if the correct URL is being logged
 
       const response = await axios.post(
-        `${backendBaseUrl}/auth/login`,  // Use the backend base URL here
+        'https://tourism-backen-api.vercel.app/auth/login',  // Use the backend base URL here
         { email, password },
         { withCredentials: true }
       );

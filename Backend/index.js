@@ -15,10 +15,13 @@ const app = express();
 
 // CORS configuration to allow cookies and your frontend URL
 const corsOptions = {
-  origin: 'https://tourism-seven-tau.vercel.app',  // Frontend URL
+  origin: ['http://localhost:5173', 'https://tourism-seven-tau.vercel.app'],  // Frontend URLs (local and production)
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,  // Allow cookies to be sent in cross-origin requests
 };
+
+app.use(cors(corsOptions));  // Enable CORS with specified options
+
 
 // CORS Middleware
 app.use(cors(corsOptions));
