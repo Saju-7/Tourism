@@ -18,7 +18,7 @@ const port = process.env.PORT || 8000;
 
 // CORS configuration to allow cookies and your frontend URL
 const corsOptions = {
-  origin: 'http://localhost:5173',  // Frontend URL
+  origin: 'https://tourism-backen-api.vercel.app/',  // Frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,  // This allows cookies to be sent in cross-origin requests
 };
