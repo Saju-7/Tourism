@@ -3,8 +3,7 @@ import User from '../models/User.js'; // Assuming you have a User model
 
 const authMiddleware = async (req, res, next) => {
   const token = req.cookies.authToken;  // Get the token from cookies
- 
-   
+ console.log("token",token)
   if (!token) {
     return res.status(401).json({ message: 'No token, authorization denied' });
   }
