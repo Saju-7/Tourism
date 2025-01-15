@@ -15,7 +15,7 @@ const app = express();
 
 // CORS configuration to allow cookies and your frontend URL
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://tourism-seven-tau.vercel.app'],  // Frontend URLs (local and production)
+  origin: ['http://localhost:5173', 'https://tourism-tomj.vercel.app/'],  // Frontend URLs (local and production)
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,  // Allow cookies to be sent in cross-origin requests
 };
