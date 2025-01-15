@@ -1,5 +1,3 @@
-// app.js
-
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -14,18 +12,15 @@ import reviewRoutes from './routes/reviewRoutes.js'; // Import review routes
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 8000;
 
 // CORS configuration to allow cookies and your frontend URL
 const corsOptions = {
-  origin: 'https://tourism-seven-tau.vercel.app/',  // Frontend URL
+  origin: 'https://tourism-seven-tau.vercel.app',  // Frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,  // This allows cookies to be sent in cross-origin requests
+  credentials: true,  // Allow cookies to be sent in cross-origin requests
 };
 
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
+// CORS Middleware
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());  // For parsing cookies
@@ -40,14 +35,14 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // Routes
 app.use('/api', reviewRoutes);  // Register review routes
-app.use('/api/', bookingRoutes);
-app.use('/api/', checkRoutes);
+app.use('/api', bookingRoutes);
+app.use('/api', checkRoutes);
 app.use('/api/auth', authRoutes);
 
-
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+// Handle the root route
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
 });
 
-
+// Export the app to be used by Vercel as a serverless function
+export default app;
