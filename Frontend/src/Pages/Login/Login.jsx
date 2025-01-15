@@ -29,15 +29,15 @@ const Login = () => {
     setIsLoading(true); // Set loading state to true while fetching data
     try {
       console.log("Sending login request...");
-
+  
       // Access the backend base URL from frontend .env
       const backendBaseUrl = import.meta.env.VITE_PUBLIC_BASE_URL;
       console.log("Backend Base URL:", backendBaseUrl);  // Check if the correct URL is being logged
-
+  
       const response = await axios.post(
         `${backendBaseUrl}/auth/login`,  // Use the backend base URL here
         { email, password },
-        { withCredentials: true }
+        { withCredentials: true }  // Send cookies (including JWT token) with the request
       );
   
       console.log("Login response:", response);
@@ -51,7 +51,9 @@ const Login = () => {
         // Fetch user bookings after successful login
         const bookingsResponse = await axios.get(
           `${backendBaseUrl}/bookings/${response.data.userId}`, // Correct URL with environment variable
-          { withCredentials: true }
+          {
+            withCredentials: true,  // Ensure credentials (cookies) are sent with the request
+          }
         );
   
         console.log("Bookings response:", bookingsResponse);
@@ -74,6 +76,7 @@ const Login = () => {
       setIsLoading(false); // Set loading state to false after fetching
     }
   };
+  
   
 
   return (
