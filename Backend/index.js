@@ -42,9 +42,7 @@ app.use('/api/', bookingRoutes);
 app.use('/api/', checkRoutes);
 app.use('/api/auth', authRoutes);
 
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
