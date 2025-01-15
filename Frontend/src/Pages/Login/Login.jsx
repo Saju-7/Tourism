@@ -47,7 +47,7 @@ const Login = () => {
         setError('');
         dispatch(login({ userId: response.data.userId })); // Dispatch userId after login
         console.log("Logged in user ID:", response.data.userId);
-  
+        navigate('/');
         // Fetch user bookings after successful login
         const bookingsResponse = await axios.get(
           `${backendBaseUrl}/bookings/${response.data.userId}`, // Correct URL with environment variable
@@ -63,7 +63,7 @@ const Login = () => {
           console.log("Bookings data:", bookingsResponse.data);
         }
   
-        navigate('/'); // Redirect to the home page
+        // Redirect to the home page
       } else {
         setError('No user ID received');
         setMessage('');
