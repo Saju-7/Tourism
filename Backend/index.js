@@ -23,7 +23,9 @@ const corsOptions = {
   credentials: true,  // This allows cookies to be sent in cross-origin requests
 };
 
-
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());  // For parsing cookies
