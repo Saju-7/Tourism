@@ -13,7 +13,7 @@ const ProtectedRoute = ({ element, ...rest }) => {
     if (isAuthenticated === null) {
       // Ideally, you can check authentication status from the server and update Redux if needed
       axios
-        .get('http://localhost:8000/api/check-auth', { withCredentials: true })
+        .get('https://tourism-backen-api.vercel.app/api/check-auth', { withCredentials: true })
         .then((response) => {
           // If successful, update Redux with authentication status
           setLoading(false);
