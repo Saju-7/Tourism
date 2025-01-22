@@ -88,29 +88,29 @@
 }
 
 /* Custom Arrows Styling */
-.btn-container {
-  text-align: end;
-  margin-top: 30px;
+.about-container .btn-container{
+  padding: 10px 51px;
+  text-align: right;
 }
-
-.handleleft,
-.handleright {
+.about-container .btn-container .handleleft{
+  background-color: green;
+  padding: 7px 12px;
+  margin: 10px;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+}
+.about-container .btn-container .handleright{
   background-color: #C7923E;
   padding: 7px 12px;
   outline: none;
   border: none;
   color: white;
   cursor: pointer;
-  border-radius: 50%;
-  font-size: 20px;
-  transition: all 0.3s ease;
+  border-radius: 3px;
 }
-
-.handleleft:hover, .handleright:hover {
-  background-color: #2A3C34;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-}
-
 /* Modal Styling */
 .modal-overlay {
   position: fixed;

@@ -3,8 +3,8 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 40vh; /* Full viewport height for the slider */
-  max-width: 100%; /* Ensure container width is limited */
+  height: 50vh; /* Responsive height */
+  max-width: 100%;
 }
 
 /* Slider Content Container */
@@ -22,11 +22,11 @@
 /* Heading for the Slider */
 .slider-heading {
   position: absolute;
-  top: 45%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 4vw; /* Responsive font size */
+  font-size: clamp(24px, 5vw, 48px); /* Responsive font size */
   font-weight: bold;
   z-index: 2;
   padding: 0 20px;
@@ -37,11 +37,11 @@
 /* Subheading for the Slider */
 .slider-subheading {
   position: absolute;
-  top: 54%;
+  top: 50%;
   left: 50%;
   transform: translateX(-50%);
   color: white;
-  font-size: 2.5vw; /* Responsive font size */
+  font-size: clamp(16px, 3vw, 24px); /* Responsive font size */
   z-index: 2;
   font-weight: normal;
   padding: 0 20px;
@@ -53,7 +53,7 @@
 .image-container {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 100%;
   overflow: hidden; /* Hide inactive images */
 }
 
@@ -94,107 +94,78 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  padding: 15px;
+  padding: 12px;
   font-size: 24px;
   cursor: pointer;
   z-index: 3;
 }
 
 .slider-nav-button.left {
-  left: 20px;
+  left: 15px;
 }
 
 .slider-nav-button.right {
-  right: 20px;
+  right: 15px;
 }
 
 .slider-nav-button:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Responsive styles for small devices */
-
-/* For small devices (up to 480px) */
+/* Responsive styles */
 @media (max-width: 480px) {
-  .slider-container{
-    height: 50vh;
-    margin: 0px;
+  .slider-container {
+    height: 60vh;
   }
   .slider-heading {
-    font-size: 6vw; /* Smaller font size for small devices */
-    top: 35%;
+    top: 30%;
+    font-size: clamp(18px, 6vw, 36px);
   }
-
   .slider-subheading {
-    font-size: 4vw; /* Smaller subheading font size */
     top: 45%;
+    font-size: clamp(14px, 4.5vw, 20px);
   }
-
   .image-container {
-    height: 300px; /* Reduce image height for small devices */
+    height: 250px;
   }
-
   .slider-nav-button {
-    padding: 10px;
-    font-size: 18px; /* Smaller navigation buttons */
+    font-size: 20px;
+    padding: 8px;
   }
 }
 
-/* For medium devices (up to 768px) */
 @media (max-width: 768px) {
+  .slider-container {
+    height: 55vh;
+  }
   .slider-heading {
-    font-size: 5vw; /* Slightly smaller font size */
-    top: 40%;
+    top: 32%;
+    font-size: clamp(20px, 5.5vw, 40px);
   }
-
   .slider-subheading {
-    font-size: 3.5vw; /* Slightly smaller subheading font size */
-    top: 50%;
+    top: 48%;
+    font-size: clamp(16px, 4vw, 22px);
   }
-
   .image-container {
-    height: 400px; /* Adjust image height for tablets */
+    height: 350px;
   }
-
   .slider-nav-button {
-    padding: 12px;
-    font-size: 20px; /* Adjust size of navigation buttons */
+    font-size: 22px;
+    padding: 10px;
   }
 }
 
-/* For large devices (up to 1024px) */
-@media (max-width: 1024px) {
-  .slider-heading {
-    font-size: 4.5vw; /* Slightly smaller font size */
-    top: 42%;
-  }
-
-  .slider-subheading {
-    font-size: 3vw; /* Adjust subheading size */
-    top: 52%;
-  }
-
-  .image-container {
-    height: 450px; /* Adjust image height */
-  }
-
-  .slider-nav-button {
-    padding: 13px;
-    font-size: 22px; /* Adjust size of navigation buttons */
-  }
-}
-
-/* For extra large screens (greater than 1024px) */
 @media (min-width: 1025px) {
+  .slider-container {
+    height: 40vh;
+  }
   .slider-heading {
-    font-size: 50px; /* Large font size for desktops */
+    font-size: 48px;
   }
-
   .slider-subheading {
-    font-size: 24px; /* Normal font size for subheading */
+    font-size: 24px;
   }
-
   .image-container {
-    height: 500px; /* Keep image height fixed */
+    height: 500px;
   }
 }

@@ -19,7 +19,7 @@ const Register = () => {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-
+  console.log("click 1")
   // Basic validation
   if (!name || !email || !password || !confirmPassword) {
     setError('Please fill in all fields');
@@ -28,9 +28,11 @@ const handleSubmit = async (e) => {
     setError('Passwords do not match');
     return;
   }
+  console.log("click 2")
 
   try {
     const backendBaseUrl = import.meta.env.VITE_PUBLIC_BASE_URL;
+    console.log('backendBaseUrl',backendBaseUrl)
     // Send POST request to backend for registration (no token needed here)
     const response = await axios.post(`${backendBaseUrl}/auth/register`, {
       name,
@@ -38,7 +40,7 @@ const handleSubmit = async (e) => {
       password,
       confirmPassword,
     });
-    
+    console.log("click 3")
     // If registration is successful, redirect to login page
     navigate('/login');
     
@@ -49,6 +51,7 @@ const handleSubmit = async (e) => {
     setError(err.response?.data?.message || 'Something went wrong');
     setMessage('');
   }
+  console.log("click 4")
 };
 
 

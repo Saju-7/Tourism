@@ -1,0 +1,16 @@
+/* Global Container Styles */
+.home-container {
+    width: 100%;
+    max-width: 1800px; /* Control the maximum width */
+    margin: 0 auto; /* Centers the content */
+    padding: 0px; /* Adds padding around the content */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  }
+  
+  /* Adjust for smaller screen sizes */
+  @media (max-width: 768px) {
+    .global-container {
+      padding: 10px; /* Smaller padding on mobile */
+    }
+  }
+  

@@ -12,6 +12,7 @@ import About from '../About/About';
 
 
 
+
 const images = [
   pic3,
   pic1,
@@ -45,6 +46,7 @@ const Home = () => {
 
   return (
     <>
+
       <div className="slider-container">
         {/* Slider content */}
         
@@ -78,7 +80,7 @@ const Home = () => {
           </button>
         </div>
       </div>
-
+     
       {/* Search form */}
       {/* <SearchForm /> */}
       <Tour/>

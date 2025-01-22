@@ -119,8 +119,12 @@ const About = () => {
         <p className="about-description">What our clients say about us</p>
 
         <div className="btn-container">
-          <button onClick={handlePrevClick} className="handleleft">{"<"}</button>
-          <button onClick={handleNextClick} className="handleright" style={{ marginLeft: '10px' }}>{">"}</button>
+          <button onClick={handlePrevClick} className="handleleft">
+            {"<"}
+          </button>
+          <button onClick={handleNextClick} className="handleright">
+            {">"}
+          </button>
         </div>
 
         {loading ? (

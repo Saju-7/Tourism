@@ -5,6 +5,7 @@ import User from '../models/User.js';
 import jwt from 'jsonwebtoken';
 
 export const registerUser = async (req, res) => {
+  console.log("check",req.body)
   const { name, email, password, confirmPassword } = req.body;
 
   if (!name || !email || !password || !confirmPassword) {
