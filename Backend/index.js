@@ -16,6 +16,7 @@ const app = express();
 const corsOptions = {
   origin: [
     'http://localhost:5173', // Local frontend URL (for development)
+    'https://tourism-frontend-zeta.vercel.app'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true, // Allows cookies to be sent in cross-origin requests
