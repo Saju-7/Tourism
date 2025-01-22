@@ -5,7 +5,7 @@ import User from '../models/User.js';
 import jwt from 'jsonwebtoken';
 
 export const registerUser = async (req, res) => {
-  console.log("check",req.body)
+  console.log("Request body for registration:", req.body);
   const { name, email, password, confirmPassword } = req.body;
 
   if (!name || !email || !password || !confirmPassword) {
@@ -40,6 +40,7 @@ export const registerUser = async (req, res) => {
       },
     });
   } catch (error) {
+    console.error('Registration error:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
@@ -100,6 +101,7 @@ export const login = async (req, res) => {
 
 export const logout = (req, res) => {
   try {
+    // Clear the authToken cookie on logout
     res.clearCookie('authToken', {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
@@ -108,7 +110,7 @@ export const logout = (req, res) => {
 
     res.status(200).json({ message: 'Logout successful' });
   } catch (err) {
-    console.error(err);
+    console.error('Logout error:', err);
     res.status(500).json({ message: 'Something went wrong, please try again' });
   }
 };

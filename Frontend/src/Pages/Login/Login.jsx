@@ -76,8 +76,6 @@ const Login = () => {
       setIsLoading(false); // Set loading state to false after fetching
     }
   };
-  
-  
 
   return (
     <GlobalContainer>

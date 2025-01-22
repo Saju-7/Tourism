@@ -37,12 +37,10 @@ const Routers = () => {
         path="/contact"
         element={<ProtectedRoute element={<ContactPage />} />}
       />
-    <Route
-  path="/booking"
-  element={<ProtectedRoute element={<Booking />} />}
-/>
-
-
+      <Route
+        path="/booking"
+        element={<ProtectedRoute element={<Booking />} />}
+      />
       {/* Login and Register routes (public) */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
