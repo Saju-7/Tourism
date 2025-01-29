@@ -97,7 +97,7 @@ h2 {
   /* Mobile Devices */
   .login-container {
     padding: 0;
-    height: 100vh; /* Full height for mobile devices */
+    height: 77vh; /* Full height for mobile devices */
     flex-direction: column;
     justify-content: center; /* Center content vertically */
     position: relative;

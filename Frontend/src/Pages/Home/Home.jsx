@@ -3,15 +3,10 @@ import pic1 from '../../images/travel.jpg';
 import pic2 from '../../images/pi2.jpg';
 import pic3 from '../../images/pi1.jpg';
 import './Home.css';
-// import SearchForm from '../SearchForm/SearchForm';
 import Tour from '../Tours/Tours';
 import Destinations from '../Destinations/Destinations';
 import Blog from '../Blog/Blog';
 import About from '../About/About';
-
-
-
-
 
 const images = [
   pic3,
@@ -46,18 +41,23 @@ const Home = () => {
 
   return (
     <>
-
       <div className="slider-container">
-        {/* Slider content */}
-        
         <div className="slider-content">
           <div className="slider-heading">
             Experience the beauty of Rwanda with us
           </div>
-
+          <div className="slider-description">
+            Join us on a journey through Rwanda's breathtaking landscapes, vibrant culture, and incredible wildlife. Let us make your travel dreams a reality.
+          </div>
           <div className="slider-subheading">
             Discover the Land of a Thousand Hills
           </div>
+
+      
+          <button className="cta-button">
+            Start Your Adventure
+          </button>
+
           <div className="image-container">
             {images.map((image, index) => (
               <img
@@ -80,14 +80,12 @@ const Home = () => {
           </button>
         </div>
       </div>
-     
-      {/* Search form */}
-      {/* <SearchForm /> */}
-      <Tour/>
-      <Destinations/>
-      <Blog/>
-      <About/>
-   
+
+      {/* Additional Sections */}
+      <Tour />
+      <Destinations />
+      <Blog />
+      <About />
     </>
   );
 };

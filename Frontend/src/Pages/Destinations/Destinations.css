@@ -1,136 +1,165 @@
 /* General container styles */
 .destinations-container {
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    height: 820px;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  height: 800px;
+  font-family: 'Lora', serif;
+}
 
-    font-family: 'Lora', serif;
-  }
-  
-  /* Heading styles */
-  .destinations-heading {
-    color: #C7923E;
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  /* Description styles */
-  .destinations-description {
-    color: black;
-    font-family: 'Lora', serif;
-    font-size: 50px;
-    width: 30%;
-    margin: auto;
-    font-weight: bold;
-    line-height: 1.2;
-    margin-bottom: 30px;
-  }
- 
-  
-  /* Card styling */
-  .destinations-container .card {
-    text-align: start;
-    padding: 0px 5px;
-    width: 10%;
-    border: none !important;
-  }
-  .destinations-container .slick-slide{
-    width: 3% !important;
-     margin-left: 110px !important;
-    border: none !important;
-  }
-  
-  .destinations-container .card img {
-    width: 100%;
-    height: auto;
-    border-radius: 50px;
-  }
-  
-  /* Optional: Hover effect for cards */
-  .destinations-container .card:hover {
-    transform: scale(1.05);
-    transition: 0.3s ease-in-out;
-  }
-  .destinations-container .btn-container{
-    padding: 10px;
-    text-align: right;
-  }
-  .destinations-container .btn-container .handleleft{
-    background-color: green;
-    padding: 7px 12px;
-    margin: 10px;
-    color: white;
-    outline: none;
-    cursor: pointer;
-    border: none;
-    border-radius: 3px;
-  }
-  .destinations-container .btn-container .handleright{
-    background-color: #C7923E;
-    padding: 7px 12px;
-    outline: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 3px;
-  }
-  .destinations-container  .card p {
-    color: #9A9AB0;
-    font-family: 'Lora', serif;
-    font-size: 16px;
-    padding: 0px !important;
-    line-height: 1.5;
+/* Heading styles */
+.destinations-heading {
+  color: #C7923E;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
-.destinations-container .slider{
+
+/* Description styles */
+.destinations-description {
+  color: black;
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+/* Slider card styles */
+.destinations-container .card {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.destinations-container .card img {
   width: 100%;
-  margin-left: auto;
+  height: auto;
+  border-radius: 20px;
 }
-@media (max-width: 768px) {
+
+.destinations-container .card h2 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.destinations-container .card p {
+  color: #9A9AB0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Hover effect for cards */
+.destinations-container .card:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+
+/* Button container styles */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-container .handleleft,
+.btn-container .handleright {
+  background-color: #C7923E;
+  padding: 10px 15px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.btn-container .handleleft {
+  background-color: green;
+}
+
+/* Slider styling */
+.slider {
+  max-width: 100%;
+  margin: auto;
+}
+
+.slick-slide {
+  padding: 0 10px;
+}
+
+@media (max-width: 1024px) {
+  .destinations-heading {
+    font-size: 2rem;
+  }
+
   .destinations-description {
     font-size: 1rem;
-    width: 90%;
   }
 
-  .destinations-container .card {
-    width: 100%; /* Cards take full width on smaller screens */
+  .btn-container .handleleft,
+  .btn-container .handleright {
+    padding: 8px 12px;
+    font-size: 0.9rem;
   }
+}
 
-  .destinations-container .btn-container {
-    justify-content: space-between;
+@media (max-width: 768px) {
+  .destinations-container {
+    padding: 10px;
+    height: 680px !important;
   }
 
   .destinations-heading {
-    font-size: 24px;
+    font-size: 1.8rem;
   }
 
-  .destinations-container .btn-container .handleleft,
-  .destinations-container .btn-container .handleright {
-    padding: 10px 15px;
+  .destinations-description {
+    font-size: 1rem;
+    width: 100%; /* Take full width */
+  }
+
+  .btn-container {
+    justify-content: space-between;
+    gap: 5px;
+  }
+
+  .btn-container .handleleft,
+  .btn-container .handleright {
+    padding: 8px 10px;
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 480px) {
+  .destinations-container{
+    height: 610px;
+  }
+  .destinations-heading {
+    font-size: 1.5rem;
+  }
+
   .destinations-description {
     font-size: 0.9rem;
-    width: 100%; /* Allow description to take full width */
-  }
-  .destinations-container{
-    height: 520px;
   }
 
-  .destinations-heading {
-    font-size: 22px;
+  .card h2 {
+    font-size: 1rem;
   }
 
-  .destinations-container .btn-container {
-    flex-direction: column;
+  .btn-container {
+    flex-direction: row;
+    justify-content: center;
   }
 
-  .destinations-container .btn-container .handleleft,
-  .destinations-container .btn-container .handleright {
-    padding: 10px 12px;
-    font-size: 18px;
-    margin-bottom: 10px;
+  .btn-container .handleleft,
+  .btn-container .handleright {
+    padding: 7px 9px;
+    font-size: 0.8rem;
+  }
+  .slick-list{
+    height: 500px;
+  }
+  .slick-slider .slick-track{
+    height: 500px;
   }
 }

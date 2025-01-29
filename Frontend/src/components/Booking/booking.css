@@ -173,6 +173,7 @@
 @media (max-width: 768px) {
   .user-bookings {
     padding: 20px;
+    width: 600px;
   }
 
   h1 {
@@ -203,7 +204,20 @@
   }
 
   .user-bookings li .buttons button {
-    width: 100%;
+    width: 50% !important
+    ;
     margin-top: 10px;
+  }
+  .user-bookings li .delete-btn {
+    margin-left: 10px;
+  }
+}
+@media (max-width: 477px) {
+  .user-bookings {
+      padding: 15px;
+      width: 300px;
+  }
+  .user-bookings li .delete-btn {
+    margin-left: 10px;
   }
 }

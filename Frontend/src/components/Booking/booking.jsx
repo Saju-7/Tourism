@@ -17,32 +17,35 @@ const Booking = () => {
   const [updatedBooking, setUpdatedBooking] = useState(null);
 
   useEffect(() => {
-    const fetchUserBookings = async () => {
-      if (!isAuthenticated || !userId) {
-        console.error('User is not authenticated');
-        return;
-      }
+    console.log("Current userId:", userId); // Debugging step
   
+    if (!isAuthenticated || !userId) {
+      console.error("User is not authenticated or userId is missing.");
+      return;
+    }
+  
+    const fetchUserBookings = async () => {
       try {
         const response = await axios.get(`https://tourism-backend-zeta.vercel.app/api/bookings/${userId}`, {
           withCredentials: true,
         });
   
-        console.log('API Response:', response.data);  // Inspect the API response
+        console.log("API Response:", response.data);
   
-        if (response.data.bookings && Array.isArray(response.data.bookings)) {
+        if (Array.isArray(response.data.bookings)) {
           dispatch(setUserBookings(response.data.bookings));
         } else {
-          console.error('Bookings are not in the expected array format.');
+          console.error("Unexpected API response format.");
           dispatch(setUserBookings([]));
         }
       } catch (error) {
-        console.error('Error fetching user bookings:', error);
+        console.error("Error fetching user bookings:", error);
       }
     };
   
     fetchUserBookings();
   }, [dispatch, isAuthenticated, userId]);
+  
 
   // If the user is not authenticated, show login prompt
   if (!isAuthenticated) {

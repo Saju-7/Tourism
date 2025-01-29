@@ -8,6 +8,7 @@ import './Header.css';
 import HeaderLogo from '../../images/HeaderLogo.png';
 import { FaShoppingCart } from 'react-icons/fa'; // Cart icon
 import { setUserBookings } from '../../features/bookingSlice/bookingSlice.js';  // Ensure this is imported
+import GlobalContainer from '../GlobalContainer/GlobalContainer.jsx';
 
 const Header = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
@@ -59,6 +60,7 @@ const Header = () => {
   return (
     <>
       <TopHeader />
+      <GlobalContainer>
       <div className="header-container">
         {/* Left side: Logo and Navigation Links */}
         <div className="header-left">
@@ -86,8 +88,7 @@ const Header = () => {
 
         {/* Mobile Hamburger Icon */}
        
-
-        {/* Right side: Conditional Rendering for Sign In or Logout */}
+        <div className="box" style={{display:'flex',justifyContent:'space-evenly',alignItems:'center'}}>
         <div className="header-signin">
           {isAuthenticated ? (
             <>
@@ -115,8 +116,11 @@ const Header = () => {
           <div></div>
           <div></div>
         </div>
+        </div>
+        {/* Right side: Conditional Rendering for Sign In or Logout */}
+       
       </div>
-
+      </GlobalContainer>
       {/* Mobile Navigation */}
       <div className={`mobile-nav ${isMobileNavOpen ? 'active' : ''}`}>
         <ul>

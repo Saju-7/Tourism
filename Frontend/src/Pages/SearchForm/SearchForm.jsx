@@ -43,24 +43,30 @@ const SearchForm = ({ packages, onSelectPackage }) => {
         date,
         packageType,
       };
-
+  
       try {
         const backendBaseUrl = import.meta.env.VITE_PUBLIC_BASE_URL;
         const response = await axios.post(`${backendBaseUrl}/book`, bookingData, {
           withCredentials: true,
         });
-
+  
         if (response.status === 201) {
           toast.success('Thank you! Your booking is confirmed.');
-
-          const bookingsResponse = await axios.get(`${backendBaseUrl}/bookings/${response.data.userId}`, {
-            withCredentials: true,  // Ensures cookies/session are sent with the request
-          });
-
-          if (bookingsResponse.data) {
-            dispatch(setUserBookings(bookingsResponse.data)); 
+  
+          // Correct userId extraction from the response
+          const userId = response.data.booking?.user; // Accessing user ID from the booking object
+  
+          if (userId) {
+            const bookingsResponse = await axios.get(`${backendBaseUrl}/bookings/${userId}`, {
+              withCredentials: true,
+            });
+  
+            if (bookingsResponse.data) {
+              dispatch(setUserBookings(bookingsResponse.data));
+            }
+          } else {
+            console.error('User ID not found in booking response:', response.data);
           }
-
         } else {
           toast.error('Booking failed. Please try again.', {
             position: toast.POSITION.TOP_CENTER,
@@ -76,6 +82,8 @@ const SearchForm = ({ packages, onSelectPackage }) => {
       navigate('/login');
     }
   };
+  
+  
 
   return (
     <>
