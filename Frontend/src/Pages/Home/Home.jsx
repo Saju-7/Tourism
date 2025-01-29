@@ -42,6 +42,7 @@ const Home = () => {
   return (
     <>
       <div className="slider-container">
+    
         <div className="slider-content">
           <div className="slider-heading">
             Experience the beauty of Rwanda with us

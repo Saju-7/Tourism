@@ -77,10 +77,10 @@ export const login = async (req, res) => {
 
     // Set the token in an HTTP-only cookie
     res.cookie('authToken', token, {
-      httpOnly: true,    // Prevents JavaScript access to the cookie
-      secure: process.env.NODE_ENV === 'production', // Use 'secure' flag for HTTPS in production
-      maxAge: 60 * 60 * 1000,  // 1 hour expiration
-      sameSite: 'Strict', // Helps prevent CSRF attacks
+      httpOnly: true,    
+      secure: process.env.NODE_ENV === 'production', // Secure in production
+      sameSite: 'None',  // Allow cross-origin authentication
+      maxAge: 24 * 60 * 60 * 1000, // 1 day expiration
     });
 
     // Return userId and message

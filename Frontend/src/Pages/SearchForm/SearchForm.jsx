@@ -37,6 +37,7 @@ const SearchForm = ({ packages, onSelectPackage }) => {
 
   const handleBookNow = async () => {
     if (isAuthenticated) {
+      console.log("isAuthenticated",isAuthenticated)
       const bookingData = {
         destination,
         guests,
