@@ -26,7 +26,7 @@ const Booking = () => {
   
     const fetchUserBookings = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/bookings/${userId}`, {
+        const response = await axios.get(`https://tourism-backend-zeta.vercel.app/api/bookings/${userId}`, {
           withCredentials: true,
         });
   
@@ -67,7 +67,7 @@ const Booking = () => {
   const handleUpdateBooking = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:8000/api/bookings/${updatedBooking._id}`,
+        `https://tourism-backend-zeta.vercel.app/api/bookings/${updatedBooking._id}`,
         updatedBooking,
         { withCredentials: true }
       );
@@ -92,7 +92,7 @@ const Booking = () => {
       try {
         console.log('Sending delete request for booking ID:', bookingId);
         // Send the delete request to the backend
-        await axios.delete(`http://localhost:8000/api/bookings/${bookingId}`, {
+        await axios.delete(`https://tourism-backend-zeta.vercel.app/api/bookings/${bookingId}`, {
           withCredentials: true,
         });
   
