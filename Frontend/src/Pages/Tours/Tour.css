@@ -159,6 +159,9 @@
     flex-basis: 93% !important;
     margin-right: 0;
 }
+.search-form input{
+  margin: 0px 0px !important;
+}
 .form-field1 {
   width: 100% !important;
   text-align: start;
