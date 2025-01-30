@@ -104,10 +104,7 @@ const Header = () => {
             </>
           ) : (
             <>
-              <button onClick={handleSignInClick}>Sign In</button>
-              <Link to="/register"  >
-                <button>Register</button>
-              </Link>
+             
             </>
           )}
         </div>
