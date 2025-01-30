@@ -105,7 +105,7 @@ const Header = () => {
           ) : (
             <>
               <button onClick={handleSignInClick}>Sign In</button>
-              <Link to="/register" style={{ marginLeft: '20px' }} className='reg'>
+              <Link to="/register"  >
                 <button>Register</button>
               </Link>
             </>

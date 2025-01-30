@@ -1,0 +1,44 @@
+.top-header-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #333;
+    flex-wrap: wrap;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+ 
+  .top-header-left div span, .top-header-right a {
+    margin-left: 8px;
+  }
+  
+  .top-header-right a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .top-header-right a:hover {
+    color: #1e90ff; /* Change color on hover */
+  }
+  
+  .top-header-left div, .top-header-right a {
+    font-size: 1rem;
+  }
+  
+  .top-header-right a:focus {
+    outline: none;
+  }
+  @media screen and (max-width: 480px) {
+    .top-header-container {
+      padding: 15px 10px;
+    }
+  
+    .top-header-left div, .top-header-right a {
+      font-size: 1rem;  /* Reduce font size for smaller screens */
+    }
+  
+    .top-header-right a {
+      font-size: 1.2rem;  /* Adjust icon size */
+    }
+  }
