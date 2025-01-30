@@ -1,4 +1,4 @@
-import { useState } from 'react'; // Import React and useState
+import { useState, useEffect } from 'react';
 import pic1 from '../../images/travel.jpg';
 import pic2 from '../../images/pi2.jpg';
 import pic3 from '../../images/pi1.jpg';
@@ -8,81 +8,49 @@ import Destinations from '../Destinations/Destinations';
 import Blog from '../Blog/Blog';
 import About from '../About/About';
 
-const images = [
-  pic3,
-  pic1,
-  pic2,
-];
+const images = [pic3, pic1, pic2];
 
 const Home = () => {
-  const [currentIndex, setCurrentIndex] = useState(0); // State for the current image
-  const [transitioning, setTransitioning] = useState(false); // State to handle transitions
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
 
-  // Move to the next image
-  const nextSlide = () => {
-    if (transitioning) return; // Prevent clicking while transitioning
-    setTransitioning(true); // Start transitioning
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleTouchStart = (e) => setTouchStart(e.touches[0].clientX);
+  const handleTouchMove = (e) => {
+    if (!touchStart) return;
+    const touchEnd = e.touches[0].clientX;
+    if (touchStart - touchEnd > 50) nextSlide();
+    if (touchStart - touchEnd < -50) prevSlide();
+    setTouchStart(null);
   };
 
-  // Move to the previous image
-  const prevSlide = () => {
-    if (transitioning) return; // Prevent clicking while transitioning
-    setTransitioning(true); // Start transitioning
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
-  };
-
-  // Reset transition after the image has changed
-  const handleTransitionEnd = () => {
-    setTransitioning(false);
-  };
+  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % images.length);
+  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
     <>
-      <div className="slider-container">
-    
-        <div className="slider-content">
-          <div className="slider-heading">
-            Experience the beauty of Rwanda with us
-          </div>
-          <div className="slider-description">
-            Join us on a journey through Rwanda's breathtaking landscapes, vibrant culture, and incredible wildlife. Let us make your travel dreams a reality.
-          </div>
-          <div className="slider-subheading">
-            Discover the Land of a Thousand Hills
-          </div>
-
-      
-          <button className="cta-button">
-            Start Your Adventure
-          </button>
-
-          <div className="image-container">
-            {images.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Slider ${index}`}
-                className={`slider-image ${index === currentIndex ? 'active' : ''}`}
-                onTransitionEnd={handleTransitionEnd} // Reset transition state
-              />
-            ))}
-            <div className="overlay"></div>
-          </div>
-
-          {/* Navigation buttons */}
-          <button className="slider-nav-button left" onClick={prevSlide}>
-            &#10094; {/* Left arrow */}
-          </button>
-          <button className="slider-nav-button right" onClick={nextSlide}>
-            &#10095; {/* Right arrow */}
-          </button>
+      <div className="slider-container" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
+        <div className="image-container">
+          {images.map((image, index) => (
+            <img key={index} src={image} alt={`Slide ${index}`} className={`slider-image ${index === currentIndex ? 'active' : ''}`} />
+          ))}
+          <div className="overlay"></div>
         </div>
+        <div className="slider-content">
+          <h1 className="slider-heading">Experience the beauty of Rwanda with us</h1>
+          <p className="slider-description">Join us on a journey through Rwanda's breathtaking landscapes, vibrant culture, and incredible wildlife. Let us make your travel dreams a reality.</p>
+          <h2 className="slider-subheading">Discover the Land of a Thousand Hills</h2>
+          <button className="cta-button">Start Your Adventure</button>
+        </div>
+        <button className="slider-nav-button left" onClick={prevSlide}>&#10094;</button>
+        <button className="slider-nav-button right" onClick={nextSlide}>&#10095;</button>
       </div>
-
-      {/* Additional Sections */}
       <Tour />
       <Destinations />
       <Blog />
