@@ -88,7 +88,7 @@ const Header = () => {
 
         {/* Mobile Hamburger Icon */}
        
-        <div className="box" style={{display:'flex',justifyContent:'space-evenly',alignItems:'center'}}>
+        <div className="box" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
         <div className="header-signin">
           {isAuthenticated ? (
             <>
@@ -103,9 +103,7 @@ const Header = () => {
               </button>
             </>
           ) : (
-            <>
-             
-            </>
+            <></>
           )}
         </div>
         <div className={`hamburger ${isMobileNavOpen ? 'open' : ''}`} onClick={toggleMobileNav}>

@@ -8,11 +8,11 @@ const TopHeader = () => {
       {/* Left side: Contact and Message */}
       <div className="top-header-left">
         <div>
-          <FontAwesomeIcon icon={faPhone} />
+          <FontAwesomeIcon icon={faPhone} className='icons'/>
           <span>+92393839383</span>
         </div>
         <div>
-          <FontAwesomeIcon icon={faEnvelope}  />
+          <FontAwesomeIcon icon={faEnvelope} className='icons' />
           <span>bbontememma@gmail.com</span>
         </div>
       </div>

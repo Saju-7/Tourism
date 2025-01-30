@@ -1,6 +1,5 @@
 const links = [
     { path: '/register', name: 'Register' },
-    { path: '/login', name: 'Login' },
     { path: '/', name: 'Home' },
     { path: '/about', name: 'About' },
     { path: '/tours', name: 'Tour package' },

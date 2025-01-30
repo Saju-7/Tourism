@@ -274,46 +274,40 @@
 
   /* Mobile Navigation */
   .mobile-nav {
-    width: 100%;
+    width: 58%;
     position: absolute;
-    top: 66px;
-        height: 210px;
+    top: 82px;
     left: 0;
+    height: 310px;
     background-color: #304F47;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 10;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  }
-
-  .mobile-nav.active {
-    display: flex;
-    transform: translateY(0);
-  }
-
-  .mobile-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
+    
+    /* Hide initially */
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-  .mobile-nav li {
-    padding: 1rem;
-    font-size: 1rem;
-    text-align: center;
-    transition: background-color 0.3s ease-in-out;
-  }
+.mobile-nav.active {
+  transform: translateY(0);
+  opacity: 1;
+}
 
-  .mobile-nav li:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+/* Ensure smooth hover effect */
+.mobile-nav li {
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.mobile-nav li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
   .mobile-nav a {
     color: white;
@@ -327,21 +321,43 @@
 
 /* For very small screens (up to 480px) */
 @media (max-width: 480px) {
- 
+  .reg {
+    margin-left: 1px !important;
+  }
 
+  .top-header-container {
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+  }
 
-
- 
+  .top-header-left span,
+  .top-header-right a {
+    font-size: 0.9rem;  /* Smaller font for tighter spaces */
+  }
 
   .header-logo img {
-    height: 45px;  /* Smaller logo */
+    height: 50px;  /* Smaller logo */
+    width: 50px;
   }
 
   .header-nav a {
     font-size: 0.9rem;  /* Reduce nav font size */
   }
 
- 
+  .header-signin button {
+    width: 100%;
+    font-size: 14px;  /* Smaller text */
+    padding: 5px 8px;
+  }
+
+  .header-signin {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;  /* Reduced gap between buttons */
+    align-items: center;
+    padding: 0.5rem;
+  }
 
   .modern-cart-btn {
     margin-top: 1rem;
@@ -353,7 +369,8 @@
   }
 
   .hamburger {
-    height: 20px;  /* Smaller hamburger button */
+    height: 22px;  /* Smaller hamburger button */
+   
   }
 
   .hamburger div {
@@ -363,6 +380,7 @@
 
   .mobile-nav li {
     font-size: 0.9rem;  /* Smaller text */
+    padding: 0px
   }
 
   .header-logo {
