@@ -1,14 +1,21 @@
 .top-header-container {
     display: flex;
-    background-color: #2A3D35;;
+    background-color: #2A3D35;
     color: #fff;
-    justify-content: space-between;
-    padding: 15px;
+    justify-content: space-around;
+    padding:20px 0px;
+
     align-items: center;
+    width: 100%;
     font-family: Arial, sans-serif;
   }
   .top-header-left{
-    padding: 5px 10px;
+    display: flex;
+    width: 45%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5%;
+    flex-wrap: wrap;
     
   }
   .top-header-left span{
@@ -16,18 +23,22 @@
   }
   .top-header-left .icons{
     font-size: 20px;
-    color: rgb(4, 207, 55);
-    margin-top: 5px;
+    
   }
   .top-header-right{
     color: white;
-    padding: 5px 5px;
+    width: 35%;
+    text-align: center;
+    display: flex;
+    gap: 5%;
+    align-items: flex-start;
+    justify-content: flex-end;
   }
   .top-header-right a{
     color: white;
-    padding: 15px;
-    border: 1px solid rgb(4, 207, 55);
-    border-radius: 50%;
+  }
+  .top-header-right a:hover{
+    color: greenyellow;
   }
  /* For tablets (width between 501px and 768px) */
 @media screen and (min-width: 501px) and (max-width: 768px) {
@@ -40,6 +51,19 @@
   .top-header-left .icons {
     font-size: 16px;
   }
+  
+}
+
+@media screen and (min-width: 769px) and (max-width: 849px) {
+  .top-header-right a {
+    font-size: 10px;
+  }
+  .top-header-left span {
+    font-size: 14px;
+  }
+  .top-header-left .icons {
+    font-size: 15px;
+  }
 }
 
 /* For small devices (width 500px and below) */
@@ -47,7 +71,6 @@
   .top-header-container {
     flex-direction: column;
     align-items: center;
-    padding: 10px;
     text-align: center;
   }
 
@@ -57,12 +80,11 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 5px 0;
+    padding: 8px;
   }
 
   .top-header-right a {
     font-size: 12px;  /* Increased for better readability */
-    padding: 10px;  /* Adjusted padding */
     border-radius: 50%;
   }
 

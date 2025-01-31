@@ -2,8 +2,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import './TopHeader.css'
+import HeadContiner from './HeadContiner';
 const TopHeader = () => {
   return (
+    <HeadContiner>
     <div className="top-header-container">
       {/* Left side: Contact and Message */}
       <div className="top-header-left">
@@ -33,6 +35,7 @@ const TopHeader = () => {
         </a>
       </div>
     </div>
+    </HeadContiner>
   );
 };
 

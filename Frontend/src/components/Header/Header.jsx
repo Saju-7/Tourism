@@ -8,7 +8,7 @@ import './Header.css';
 import HeaderLogo from '../../images/HeaderLogo.png';
 import { FaShoppingCart } from 'react-icons/fa'; // Cart icon
 import { setUserBookings } from '../../features/bookingSlice/bookingSlice.js';  // Ensure this is imported
-import GlobalContainer from '../GlobalContainer/GlobalContainer.jsx';
+import HeadContiner from './HeadContiner.jsx';
 
 const Header = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
@@ -60,7 +60,7 @@ const Header = () => {
   return (
     <>
       <TopHeader />
-      <GlobalContainer>
+      <HeadContiner>
       <div className="header-container">
         {/* Left side: Logo and Navigation Links */}
         <div className="header-left">
@@ -88,24 +88,27 @@ const Header = () => {
 
         {/* Mobile Hamburger Icon */}
        
-        <div className="box" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-        <div className="header-signin">
+    
+        <div className="header-signin" >
           {isAuthenticated ? (
             <>
-              <button onClick={handleLogoutClick}>Logout</button>
+              <i class="fa-solid fa-right-from-bracket" ></i>
               {/* Cart button with the number of bookings */}
-              <button onClick={handleCartClick} className="modern-cart-btn" style={{ marginLeft: '30px' }}>
-                <FaShoppingCart size={28} />
+        
+              <i class="fa-solid fa-cart-arrow-down" >
                 {/* Show the number of bookings if available */}
                 {userBookings.length > 0 && (
                   <span className="cart-count">{userBookings.length}</span>
                 )}
-              </button>
+                </i>
             </>
           ) : (
-            <></>
+            <>
+               <i class="fa-solid fa-user-plus" ></i>
+               <i class="fa-solid fa-right-to-bracket"></i>
+            </>
           )}
-        </div>
+      
         <div className={`hamburger ${isMobileNavOpen ? 'open' : ''}`} onClick={toggleMobileNav}>
           <div></div>
           <div></div>
@@ -115,7 +118,7 @@ const Header = () => {
         {/* Right side: Conditional Rendering for Sign In or Logout */}
        
       </div>
-      </GlobalContainer>
+      </HeadContiner>
       {/* Mobile Navigation */}
       <div className={`mobile-nav ${isMobileNavOpen ? 'active' : ''}`}>
         <ul>
@@ -123,7 +126,9 @@ const Header = () => {
             <li key={index}>
               {/* Add the closeMobileNav function here as well */}
               <Link to={link.path} onClick={closeMobileNav}>
+              
                 {link.name}
+                <hr />
               </Link>
             </li>
           ))}

@@ -3,19 +3,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
-  gap: 20px; /* Reduce gap for smaller devices */
-  background-color: rgb(255, 255, 255);
+  padding:30px 0px;
+  align-content: center;
   color: black;
+  margin: auto;
   font-family: 'Mulish', sans-serif;
-  width: 100%;
+  width: 90%;
   flex-wrap: wrap; /* Prevent wrapping on large screens */
 }
+
 
 /* Left side: Logo and Navigation Links */
 .header-left {
   display: flex;
+  margin-left: 0px;
   align-items: center;
+
 }
 
 .header-logo {
@@ -26,6 +29,7 @@
 
 .header-logo img {
   height: 60px; /* Adjust the logo size for small devices */
+  margin-top: 10px;
 }
 
 /* Navigation Links */
@@ -47,17 +51,6 @@
   font-family: 'Mulish', sans-serif;
 }
 
-/* Sign In Button */
-.header-signin button {
-  padding: 10px 16px;
-  background-color: #304F47;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-family: 'Mulish', sans-serif;
-}
 
 /* Hamburger Menu Styles */
 .hamburger {
@@ -112,10 +105,14 @@
   transition: 2s; /* Smooth transition for sliding in */
   z-index: 5;
 }
+hr{
+  width: 100%;
+}
 
 .mobile-nav.active {
   transform: translateX(0); /* Slide into view */
   display: flex; /* Ensure it's visible when active */
+  align-items: start;
 }
 
 /* Mobile Navigation List */
@@ -141,23 +138,32 @@
 
 /* Staggering Effect for each list item */
 .mobile-nav li:nth-child(1) {
+  text-align: start;
   transition-delay: 0.2s; /* Delay the first item by 0.2 seconds */
 }
 
 .mobile-nav li:nth-child(2) {
   transition-delay: 0.3s; /* Delay the second item by 0.3 seconds */
+  text-align: start;
 }
 
 .mobile-nav li:nth-child(3) {
   transition-delay: 0.4s; /* Delay the third item by 0.4 seconds */
+  text-align: start;
 }
 
 .mobile-nav li:nth-child(4) {
   transition-delay: 0.5s; /* Delay the fourth item by 0.5 seconds */
+  text-align: start;
 }
 
 .mobile-nav li:nth-child(5) {
   transition-delay: 0.6s; /* Delay the fifth item by 0.6 seconds */
+  text-align: start;
+}
+.mobile-nav li:nth-child(6) {
+  transition-delay: 0.6s; /* Delay the fifth item by 0.6 seconds */
+  text-align: start;
 }
 
 .mobile-nav a {
@@ -169,60 +175,74 @@
 
 .header-signin {
   display: flex;
-  justify-content: space-between;
+  font-size: 46px;
+  padding: 15px 0px;
+  justify-content: space-around;
+}
+i{
+  color: #286f5c;
+  font-size: 34px;
+  margin: 0px 10px;
 }
 
-.header-signin .btn2 {
-  font-size: 24px; /* Increase the font size of the icon */
-  padding: 10px;
-  border-radius: 50%;
-  background-color: #e9eeed;
-  color: black;
-}
 
-.header-signin button svg {
-  width: 24px; /* Ensure the icon size fits within the button */
-  height: 24px;
-  margin-right: 8px; /* Space between the icon and text */
-}
-
-.header-signin button {
-  padding: 10px 16px;
-  background-color: #304F47;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-family: 'Mulish', sans-serif;
-  display: flex;
-  align-items: center;
-}
-
-.header-signin button svg {
-  margin-right: 5px;
-}
 .header-logo {
   font-size: 24px;
   font-weight: bold;
   margin-right: 290px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1078px){
+
+  .header-logo{
+    margin-right: 102px;
+  }
+}
+
+@media (max-width: 896px){
+ 
+  .header-nav li{
+    margin-left: 5px;
+  }
+  .header-nav a{
+    font-size: 15px;
+  }
+  .header-logo{
+    margin-right: 52px;
+  }
+  i{
+    font-size: 24px;
+    margin: 0px 10px;
+  }
+} 
+
+@media (min-width: 500px) and (max-width: 768px) {
   .header-container {
     flex-wrap: wrap;
+    padding: 0px;
+    width: 100%;
+    /* background-color: gray; */
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem; /* Improved spacing */
   }
+  .header-signin{
+    /* background-color: red; */
+    font-size: 16px;
+    
+    margin-right: 30px;
+  }
+ 
+ 
 
   .header-logo {
     margin-left: 0;
   }
 
   .header-logo img {
-    height: 90px; /* Slightly optimized logo size */
+    height: 73px; /* Slightly optimized logo size */
     transition: transform 0.3s ease-in-out;
+    margin-left: 30px;
   }
 
   .header-nav {
@@ -244,25 +264,7 @@
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
 
-  .header-signin {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.8rem;
-  }
-
-  .header-signin button {
-    width: 100%;
-    padding: 0.7rem 0.6rem;
-    font-size: 1rem;
-    border-radius: 0.3rem;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-  }
-
-  .header-signin button:hover {
-    background-color: #286f5c; /* Slightly darker hover effect */
-    transform: scale(1.05);
-  }
+ 
 
   .modern-cart-btn {
     margin-top: 1rem;
@@ -274,11 +276,11 @@
 
   /* Mobile Navigation */
   .mobile-nav {
-    width: 58%;
+    width: 56%;
     position: absolute;
-    top: 82px;
-    left: 0;
-    height: 310px;
+    top: 165px;
+    right: 3px; /* Changed from left: 0 to right: 0 */
+    height: 586px;
     background-color: #304F47;
     display: flex;
     flex-direction: column;
@@ -286,15 +288,18 @@
     z-index: 10;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     
-    /* Hide initially */
-    transform: translateX(-100%);
+    /* Hide initially (off-screen to the right) */
+    transform: translateX(100%);
     opacity: 0;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .mobile-nav.active {
-  transform: translateY(0);
-  opacity: 1;
+    transform: translateX(0); /* Moves into view */
+    opacity: 1;
+}
+.mobile-nav ul {
+  width: 100%;
 }
 
 /* Ensure smooth hover effect */
@@ -318,87 +323,98 @@
   }
 }
 
-
-/* For very small screens (up to 480px) */
-@media (max-width: 480px) {
-  .reg {
-    margin-left: 1px !important;
-  }
-
-  .top-header-container {
-    display: flex;
+@media (max-width: 500px) {
+  .header-container {
+    flex-direction: row;
     padding: 0px;
-    margin: 0px;
-  }
-
-  .top-header-left span,
-  .top-header-right a {
-    font-size: 0.9rem;  /* Smaller font for tighter spaces */
-  }
-
-  .header-logo img {
-    height: 50px;  /* Smaller logo */
-    width: 50px;
-  }
-
-  .header-nav a {
-    font-size: 0.9rem;  /* Reduce nav font size */
-  }
-
-  .header-signin button {
+   
+    align-items: start;
+    justify-content: space-between;
+    text-align: center;
     width: 100%;
-    font-size: 14px;  /* Smaller text */
-    padding: 5px 8px;
   }
 
   .header-signin {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;  /* Reduced gap between buttons */
-    align-items: center;
-    padding: 0.5rem;
+    font-size: 14px;
+    margin-right: 0px;
+  
+  }
+  .header-signin i{
+    font-size: 16px;
   }
 
-  .modern-cart-btn {
-    margin-top: 1rem;
+  .header-logo img {
+    height: 35px; /* Smaller logo for small screens */
+    margin-left: 0;
   }
 
-  .cart-count {
-    font-size: 0.8rem;  /* Smaller cart count */
-    padding: 0.2rem;
+  .header-nav {
+    display: none;
   }
 
   .hamburger {
-    height: 22px;  /* Smaller hamburger button */
-   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    height: 17px;
   }
 
   .hamburger div {
     width: 25px;
-    height: 2px;  /* Thinner hamburger lines */
+    height: 2px;
+    background-color: #333;
+  }
+
+  .modern-cart-btn {
+    margin-top: 0.5rem;
+  }
+
+  .cart-count {
+    font-size: 0.8rem;
+  }
+
+  /* Mobile Navigation */
+  .mobile-nav {
+    width: 65%; /* Larger width for smaller screens */
+    top: 156px;
+    right: 0;
+   
+    height: auto;
+    background-color: #304F47;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  }
+
+  .mobile-nav.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .mobile-nav ul {
+    width: 100%;
   }
 
   .mobile-nav li {
-    font-size: 0.9rem;  /* Smaller text */
-    padding: 0px
-  }
-
-  .header-logo {
-    margin-right: 0;
-    font-size: 1rem;  /* Adjust logo text size */
-  }
-
-  .header-signin .btn2 {
-    font-size: 1rem;  /* Adjust icon size */
     padding: 0.8rem;
-    border-radius: 50%;
-    background-color: #e9eeed;
-    color: #333;
+    font-size: 0.9rem;
+    
+    text-align: center;
+  }
+
+  .mobile-nav a {
+    font-size: 1rem;
+    color: white;
   }
 }
 
-
-/* Slide-in effect for mobile nav */
 @keyframes slideIn {
   0% {
     transform: translateX(100%);  /* Start off-screen */

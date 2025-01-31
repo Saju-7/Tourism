@@ -1,0 +1,16 @@
+/* Global Container Styles */
+.HeadContiner-container {
+    width: 100%;
+    max-width:5100px ; /* Control the maximum width */
+    margin: 0 ; /* Centers the content */
+    padding: 0px; /* Adds padding around the content */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  }
+  
+  /* Adjust for smaller screen sizes */
+  @media (max-width: 768px) {
+    .HeadContiner-container {
+      padding: 0px; /* Smaller padding on mobile */
+    }
+  }
+  

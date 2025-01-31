@@ -118,7 +118,7 @@
 
 @media (max-width: 480px) {
   .slider-container {
-    height: 40vh;
+    height: 80vh;
   }
   .slider-heading {
     font-size: 18px;
